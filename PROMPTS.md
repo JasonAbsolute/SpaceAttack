@@ -1,6 +1,6 @@
 # Prompt log and active time
 
-This file records the user's project instructions for this build. Implementation used Codex only.
+This file records the user's project instructions for this build. All requests below are from the same Codex chat, in chronological order; the initial game brief was submitted twice verbatim and is recorded once. Implementation used Codex only.
 
 ## Active-work clock
 
@@ -120,3 +120,24 @@ No separate code-generation prompts or other AI tools were used. The implementat
 ## Prompt 16 — game-over retry screen
 
 > the game over screen doesnt load to say retry?
+
+## Prompt 17 — push the project to GitHub
+
+> can you oush everything to the repo? [https://github.com/JasonAbsolute/SpaceAttack.git](https://github.com/JasonAbsolute/SpaceAttack.git)
+
+## Prompt 18 — reviewer run and play instructions
+
+> how should reviewers run or play the game?
+
+## Prompt 19 — links for submission materials
+
+> ok i uploaded files for gameplay and screen shot can you get me links for each one for this google doc? \\
+> Solitaire - Calibration Submission
+> Submission materials
+> Source repository or ZIP link
+> Submitted commit or version
+> How should reviewers run and play your game? Include setup commands and controls.
+> Gameplay screenshots link — Upload screenshots of the gameplay
+> Recording link — Record the game and how to play it, explain why you designed the game that way, what decisions you took and why, what you would improve given more time, etc.
+> Complete chronological prompt-history link — Include exact prompts, follow-ups, corrections, and failed attempts in chronological order. Label separate Codex chats and show their order. A text or Markdown document is fine.
+> Codex conversation share or export link

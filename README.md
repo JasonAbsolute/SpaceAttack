@@ -4,14 +4,14 @@ A small browser arcade boss fight. Pilot Olimar's supplied ship, dodge Sans's in
 
 ## Play
 
-Open `index.html` in a modern browser. No install or build step is needed.
+Download the repository ZIP, extract it, then open `index.html` in a modern browser. No install or build step is needed. If the browser blocks local audio, open a terminal in the extracted folder, run `py -m http.server 8000`, and visit `http://localhost:8000`.
 
 - Press **Start Flight** to watch the ship arrive and Sans enter. The intro ends in a brief standoff: move with **WASD** or the **arrow keys**, fire first with **Space**, or let Sans make the first move.
 - Hold **Space** to fire. Every tenth shot sends the next Pikmin power.
 - Dodge the falling bones. Each life absorbs four hits; the game starts with three lives.
 - Every 5% of boss health lost increases the attack pressure. Every 10% unlocks another move; at 10% health Sans enters a final frenzy.
 - Defeat Sans before losing all lives.
-- Press **Fly Again** after a win or loss, or press **R**.
+- Press **Retry** after a win or loss, or press **R**.
 - The uploaded **Megalovania remix** starts when you launch a run. Use its audio controls to pause or change volume. **SFX ON / SFX OFF** controls the separate battle sounds.
 - If Sans falls, the ship charges a final shot; press **Space** when prompted to fire it and watch the victory fly-off. Losing all lives triggers a ship explosion and stops the music.
 
