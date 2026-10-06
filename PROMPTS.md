@@ -7,8 +7,8 @@ This file records the user's project instructions for this build. Implementation
 - Started: October 5, 2026, 11:43 PM PDT
 - Limit: 2 hours of active work, including the player's reflection
 - Initial full-game play-test finished: October 6, 2026, 12:02 AM PDT; updated sprite/music play-test finished around 12:47 AM PDT
-- Codex active work: about 101 minutes total (about 19 minutes remain for the player's reflection and any follow-up work)
-- Reflection time: not yet counted; write it in your own words in `REFLECTION.md` and add its start/finish minutes here. About 19 minutes remain under the two-hour cap.
+- Codex active work: about 107 minutes total (about 13 minutes remain for the player's reflection and any follow-up work)
+- Reflection time: not yet counted; write it in your own words in `REFLECTION.md` and add its start/finish minutes here. About 13 minutes remain under the two-hour cap.
 
 ## Manual play-test record
 
@@ -28,6 +28,7 @@ This file records the user's project instructions for this build. Implementation
 - Play-tested the sound-enabled opening and fight: the quiet standoff stayed shot-free until Sans's timed first attack, a funny line typed character by character beside him, and the browser reported no console errors.
 - Reproduced a missing game-over screen after the last life: the final collision cleared the incoming-bone array while the collision loop kept reading it, throwing an error and halting the animation frame. Stopped the loop as soon as the fatal hit changes the game mode, then replayed until defeat; GAME OVER and RETRY appeared. Clicked RETRY and confirmed a new run starts with full health and three lives.
 - After reloading the fix, the browser console showed no new errors during the defeat and retry play-test.
+- Pushed all 45 project files to `https://github.com/JasonAbsolute/SpaceAttack.git` on `main` (initial commit `d66896b`).
 
 ## Prompt 1 — initial game brief
 
