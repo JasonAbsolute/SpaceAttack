@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#09090d" />
+    <meta name="description" content="A tiny pixel-space boss battle. Pilot the Sprout ship, dodge bone waves, and send Pikmin powers flying." />
+    <title>SPACE ATTACK // Last Star</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="masthead">
+        <a class="wordmark" href="#" aria-label="Space Attack home"><span class="wordmark-star">✦</span> SPACE ATTACK <span class="wordmark-slash">//</span> <span class="wordmark-sub">LAST STAR</span></a>
+        <div class="masthead-right">
+          <span class="run-label"><i></i> ONE-SHOT ARCADE</span>
+          <button id="soundToggle" class="sound-button" type="button" aria-pressed="true" aria-label="Turn sound effects off">♫ <span>SFX ON</span></button>
+        </div>
+      </header>
+
+      <section class="game-frame" aria-label="Space Attack game">
+        <div class="top-hud">
+          <div class="boss-readout">
+            <div class="readout-line"><span class="label">SANS // THE SKELETON</span><span id="bossStatusTag" class="boss-state-chip" hidden></span><span class="sub-label" id="bossPhase">BONE WAVE 01</span></div>
+            <div class="boss-bar" role="progressbar" aria-label="Boss health" aria-valuemin="0" aria-valuemax="100" aria-valuenow="100"><div id="bossHealthFill" class="boss-health-fill"></div></div>
+          </div>
+          <div class="score-readout"><span class="label">SCORE</span><strong id="scoreValue">000000</strong></div>
+          <div class="wave-readout"><span class="label">WAVE</span><strong id="waveValue">01</strong></div>
+        </div>
+
+        <div class="arena-row">
+          <div class="arena-wrap">
+            <canvas id="arena" width="960" height="600" aria-label="Game arena. Move with WASD or arrow keys, hold Space to fire, and dodge falling bones." tabindex="0"></canvas>
+            <div id="screenOverlay" class="screen-overlay">
+              <div class="title-card">
+                <div class="eyebrow"><span></span> SIGNAL FOUND · DEEP SPACE</div>
+                <h1>SPACE<br /><em>ATTACK</em><small>LAST STAR</small></h1>
+                <p class="title-copy">A little ship. A very big bone to pick.</p>
+                <div class="how-to-play">
+                  <div class="controls-list">
+                    <div><kbd>W A S D</kbd><span>MOVE YOUR SHIP</span></div>
+                    <div><kbd>← ↑ ↓ →</kbd><span>OR USE ARROWS</span></div>
+                    <div><kbd>SPACE</kbd><span>HOLD TO FIRE</span></div>
+                  </div>
+                  <p class="deck-note"><b>PIKMIN ON DECK</b> Every 10th shot launches the next elemental Pikmin. Its power changes each time.</p>
+                  <p class="boss-note"><b>SANS GETS MEANER:</b> every 5% of HP lost raises the heat; every 10% unlocks a move. The last 10% is a frenzy.</p>
+                </div>
+                <button id="startButton" class="primary-button" type="button">START FLIGHT <span>↗</span></button>
+                <p class="start-hint">STANDOFF · MOVE FREELY · SANS THROWS FIRST IN A MOMENT</p>
+              </div>
+            </div>
+            <div id="endOverlay" class="screen-overlay is-hidden" aria-live="polite">
+              <div class="title-card result-card">
+                <div class="eyebrow"><span></span> <span id="resultEyebrow">SIGNAL LOST</span></div>
+                <h2 id="resultTitle">GAME OVER</h2>
+                <p id="resultCopy" class="title-copy">One more run?</p>
+                <div class="result-score"><span>FINAL SCORE</span><b id="finalScore">000000</b></div>
+                <button id="restartButton" class="primary-button" type="button">RETRY <span>↻</span></button>
+                <p class="start-hint">YOUR LITTLE SHIP BELIEVES IN YOU</p>
+              </div>
+            </div>
+          </div>
+
+          <aside class="deck-panel" aria-label="Pikmin power deck">
+            <div class="deck-head"><span class="label">ON DECK</span><span class="deck-count" id="shotsCount">10 <small>SHOTS</small></span></div>
+            <div class="next-pikmin" id="nextPikmin" data-kind="red">
+              <span class="pikmin-icon-main"><img id="pikminSprite" class="pikmin-character" src="assets/pikmin-red.png" alt="Red Pikmin" /><img class="pikmin-flower-overlay" src="assets/pikmin-flower.png" alt="" aria-hidden="true" /></span>
+              <div><span class="next-label">NEXT PIKMIN</span><strong id="pikminName">RED</strong></div>
+            </div>
+            <p id="pikminDescription" class="pikmin-description">Double damage.<br />A bold little spark.</p>
+            <div class="deck-divider"></div>
+            <div class="deck-list" id="deckList" aria-label="Pikmin rotation">
+              <div class="deck-item active" data-kind="red"><span class="pikmin-icon-small"><img src="assets/pikmin-red.png" alt="" aria-hidden="true" /><img class="pikmin-flower-overlay" src="assets/pikmin-flower.png" alt="" aria-hidden="true" /></span><span>RED</span><small>×2 DMG</small></div>
+              <div class="deck-item" data-kind="electric"><span class="pikmin-icon-small"><img src="assets/pikmin-electric.png" alt="" aria-hidden="true" /><img class="pikmin-flower-overlay" src="assets/pikmin-flower.png" alt="" aria-hidden="true" /></span><span>ELECTRIC</span><small>STUN 3s</small></div>
+              <div class="deck-item" data-kind="blue"><span class="pikmin-icon-small"><img src="assets/pikmin-blue.png" alt="" aria-hidden="true" /><img class="pikmin-flower-overlay" src="assets/pikmin-flower.png" alt="" aria-hidden="true" /></span><span>BLUE</span><small>SLOW</small></div>
+              <div class="deck-item" data-kind="white"><span class="pikmin-icon-small"><img src="assets/pikmin-white.png" alt="" aria-hidden="true" /><img class="pikmin-flower-overlay" src="assets/pikmin-flower.png" alt="" aria-hidden="true" /></span><span>WHITE</span><small>POISON 10s</small></div>
+              <div class="deck-item" data-kind="purple"><span class="pikmin-icon-small"><img src="assets/pikmin-purple.png" alt="" aria-hidden="true" /><img class="pikmin-flower-overlay" src="assets/pikmin-flower.png" alt="" aria-hidden="true" /></span><span>PURPLE</span><small>×4 DMG</small></div>
+            </div>
+            <div class="deck-footer captain-card" id="captainCard" data-mood="steady">
+              <img id="olimarSprite" class="olimar-sprite" src="assets/olimar-idle-1.png" alt="Olimar, captain" />
+              <div class="captain-readout"><span>OLIMAR · CAPTAIN</span><strong id="captainStatus">CREW ABOARD · READY</strong></div>
+              <span class="captain-alert" aria-hidden="true">!</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="bottom-hud">
+          <div class="player-status">
+            <span class="label">SHIP INTEGRITY</span>
+            <div class="player-hp-track"><div id="playerHealthFill" class="player-health-fill"></div></div>
+            <span id="hpValue" class="hp-value">100 / 100</span>
+          </div>
+          <div class="lives-status"><span class="label">LIVES</span><div id="livesValue" class="lives-value" aria-label="3 lives">♥ ♥ ♥</div></div>
+          <div class="status-effects" id="statusEffects" aria-live="polite"><span class="label">BOSS STATUS</span><span id="bossStatusValue" class="status-idle">LOOKING PRETTY CHILL</span></div>
+        </div>
+      </section>
+
+      <details class="music-dock">
+        <summary><span class="music-icon">♫</span><span><b>MEGALOVANIA</b><small>LOCAL TRACK · PLAYS WITH FLIGHT</small></span><span class="music-action">SOUNDTRACK <i>♪</i></span></summary>
+        <div class="music-player">
+          <div class="music-controls">
+            <button id="musicToggle" class="sound-button music-toggle" type="button" aria-pressed="false" aria-label="Play Megalovania">♫ <span>PLAY MUSIC</span></button>
+            <label class="music-volume"><span>LEVEL</span><input id="musicVolume" type="range" min="0" max="1" value="0.38" step="0.01" aria-label="Music volume" /></label>
+          </div>
+          <audio id="bossMusic" loop preload="metadata" src="music/MEGALOVANIA%20(remix)%20-%20Smash%20Bros%20Ultimate%20music.mp3" aria-label="Megalovania remix soundtrack"></audio>
+          <p>The uploaded soundtrack starts when you launch a run. Use these controls to pause or change the volume. Sound effects are toggled separately.</p>
+        </div>
+      </details>
+
+      <footer class="page-footer"><span>MADE OF STARDUST &amp; STUBBORNNESS</span><span>◈ &nbsp; TIP: KEEP MOVING. BONES DON'T MISS TWICE.</span></footer>
+    </main>
+    <script src="game.js"></script>
+  </body>
+</html>

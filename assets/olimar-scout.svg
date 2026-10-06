@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 340" fill="none">
+  <defs>
+    <linearGradient id="hull" x1="69" y1="145" x2="373" y2="258" gradientUnits="userSpaceOnUse"><stop stop-color="#fffbea"/><stop offset=".34" stop-color="#f7f0d6"/><stop offset=".7" stop-color="#c5d7b2"/><stop offset="1" stop-color="#738da1"/></linearGradient>
+    <linearGradient id="glass" x1="164" y1="70" x2="270" y2="206" gradientUnits="userSpaceOnUse"><stop stop-color="#d8fff6"/><stop offset=".24" stop-color="#83d7d8"/><stop offset=".72" stop-color="#568aa7"/><stop offset="1" stop-color="#27415c"/></linearGradient>
+    <linearGradient id="wing" x1="39" y1="224" x2="130" y2="174" gradientUnits="userSpaceOnUse"><stop stop-color="#db564e"/><stop offset="1" stop-color="#ffb763"/></linearGradient>
+    <linearGradient id="flame" x1="115" y1="271" x2="323" y2="292" gradientUnits="userSpaceOnUse"><stop stop-color="#61edff"/><stop offset=".55" stop-color="#fff078"/><stop offset="1" stop-color="#ff865f"/></linearGradient>
+    <filter id="drop" x="12" y="16" width="414" height="318" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="14" stdDeviation="11" flood-color="#000" flood-opacity=".48"/></filter>
+    <filter id="shine" x="149" y="57" width="148" height="158" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <ellipse cx="218" cy="314" rx="166" ry="16" fill="#000" opacity=".3"/>
+  <g filter="url(#drop)">
+    <!-- engine bloom -->
+    <path d="m148 228-72 53 78-19m161-34 72 53-78-19" fill="url(#flame)" opacity=".85"/>
+    <path d="M101 183 34 162l26 76 83 15 9-53-51-17Zm238 0 67-21-26 76-83 15-9-53 51-17Z" fill="url(#wing)" stroke="#fff0cf" stroke-width="6" stroke-linejoin="round"/>
+    <path d="m49 175 64 20m278-20-64 20" stroke="#fff6d3" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+    <path d="M81 221h60m158 0h61" stroke="#633e45" stroke-width="7" stroke-linecap="round" opacity=".7"/>
+    <!-- smooth retro-future hull -->
+    <path d="M87 214c4-43 42-72 94-87 15-40 30-67 49-76 20 8 37 34 51 76 51 15 90 44 94 87-22 41-79 62-145 63-68 1-122-19-143-63Z" fill="url(#hull)" stroke="#fff8e5" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M104 207c31 24 72 37 126 38 53 0 95-12 128-38l-8 24c-30 31-72 46-120 48-51 0-93-16-119-48l-7-24Z" fill="#788d81" opacity=".63"/>
+    <path d="M95 225c27 29 77 48 135 48 58 0 110-17 136-47" stroke="#dd6256" stroke-width="9" stroke-linecap="round"/>
+    <!-- large glass canopy -->
+    <path d="M141 157c6-43 35-81 78-87 45 5 73 43 80 87-19 20-46 31-79 31-34 0-60-11-79-31Z" fill="url(#glass)" stroke="#f8fff2" stroke-width="8"/>
+    <ellipse cx="221" cy="116" rx="52" ry="39" fill="#f5fff3" opacity=".38" filter="url(#shine)"/>
+    <path d="M166 139c11-28 28-45 53-49m-39 77 48-76" stroke="#edfffc" stroke-width="8" stroke-linecap="round" opacity=".7"/>
+    <path d="M239 88c20 10 36 28 46 52" stroke="#173e58" stroke-width="5" stroke-linecap="round" opacity=".38"/>
+    <!-- antenna and leaf -->
+    <path d="M220 70V39" stroke="#ffe1a1" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="220" cy="36" r="11" fill="#ff735f" stroke="#fff1ce" stroke-width="5"/>
+    <path d="M222 28c18-27 48-26 56-21-2 27-25 42-53 31-3-3-4-6-3-10Z" fill="#74d58d" stroke="#efffd1" stroke-width="5" stroke-linejoin="round"/>
+    <path d="m226 33 37-19" stroke="#e0ffd6" stroke-width="4" stroke-linecap="round"/>
+    <!-- portholes, rivets, and engines -->
+    <circle cx="112" cy="215" r="9" fill="#64e9f1" stroke="#f4ffed" stroke-width="4"/>
+    <circle cx="331" cy="215" r="9" fill="#64e9f1" stroke="#f4ffed" stroke-width="4"/>
+    <path d="M157 239c20 9 41 14 65 14 24 0 47-5 66-14" stroke="#f9fcdf" stroke-width="5" stroke-linecap="round"/>
+    <rect x="172" y="266" width="34" height="20" rx="9" fill="#354453" stroke="#f8eac5" stroke-width="4"/>
+    <rect x="230" y="266" width="34" height="20" rx="9" fill="#354453" stroke="#f8eac5" stroke-width="4"/>
+    <path d="M180 284c3 23 11 36 17 39 7-16 7-29 5-39m38 0c-3 23-11 36-17 39-7-16-7-29-5-39" fill="url(#flame)" opacity=".94"/>
+    <path d="M177 179c16 11 29 15 44 15s30-5 43-15" stroke="#e8fff4" stroke-width="5" stroke-linecap="round" opacity=".8"/>
+  </g>
+  <path d="m38 101 4 10 10 4-10 4-4 10-4-10-10-4 10-4 4-10Zm367 61 3 8 8 3-8 3-3 8-3-8-8-3 8-3 3-8Z" fill="#fff2be" opacity=".8"/>
+</svg>

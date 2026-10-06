@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 360" fill="none">
+  <defs>
+    <linearGradient id="coat" x1="96" y1="176" x2="332" y2="331" gradientUnits="userSpaceOnUse"><stop stop-color="#4d80b6"/><stop offset=".52" stop-color="#274c77"/><stop offset="1" stop-color="#172b49"/></linearGradient>
+    <linearGradient id="skull" x1="145" y1="31" x2="296" y2="220" gradientUnits="userSpaceOnUse"><stop stop-color="#fffef8"/><stop offset=".62" stop-color="#efecdd"/><stop offset="1" stop-color="#c8c6c4"/></linearGradient>
+    <linearGradient id="blueEye" x1="180" y1="96" x2="219" y2="153" gradientUnits="userSpaceOnUse"><stop stop-color="#fcffff"/><stop offset=".2" stop-color="#9ef8ff"/><stop offset="1" stop-color="#279dff"/></linearGradient>
+    <linearGradient id="shoe" x1="140" y1="284" x2="228" y2="327" gradientUnits="userSpaceOnUse"><stop stop-color="#fbf9ec"/><stop offset="1" stop-color="#aaa8a3"/></linearGradient>
+    <filter id="glow" x="124" y="75" width="178" height="112" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="11"/></filter>
+    <filter id="shadow" x="62" y="17" width="305" height="353" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000" flood-opacity=".48"/></filter>
+  </defs>
+  <ellipse cx="215" cy="334" rx="119" ry="13" fill="#000" opacity=".25"/>
+  <g filter="url(#shadow)">
+    <!-- Hoodie, little hands, and slouchy shorts -->
+    <path d="M134 169c-34 13-55 38-64 76-5 23 9 39 31 33l37-14 17 48c38 20 82 23 125 5l12-52 42 14c20 7 34-7 26-29-10-35-33-64-69-80l-29-12H159l-25 11Z" fill="url(#coat)" stroke="#b9d5eb" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M139 184c-18 8-32 25-41 51l26 8 27-39-12-20ZM283 184c19 12 31 28 39 52l-26 8-27-38 14-22Z" fill="#f4f2e9" stroke="#a6c4e1" stroke-width="4"/>
+    <path d="m143 267 5 43c40 20 80 22 119 4l6-48c-39 19-87 21-130 1Z" fill="#202638" stroke="#9db3cc" stroke-width="4"/>
+    <path d="M168 302c-10 12-19 20-27 28-7 8-1 16 12 17h51c11-1 16-6 15-15l-5-27-46-3ZM240 302l-2 20c-1 12 5 22 17 24h52c13-1 15-10 7-19l-31-28-43 3Z" fill="url(#shoe)" stroke="#7f8790" stroke-width="4"/>
+    <path d="M143 333h65M246 334h68" stroke="#ff748f" stroke-width="7" stroke-linecap="round"/>
+    <path d="m169 188 13 50m77-52-16 54" stroke="#a8c9e8" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+    <path d="M192 198c5 4 11 6 18 6 8 0 14-2 19-6" stroke="#d9e8f4" stroke-width="3" stroke-linecap="round"/>
+    <path d="M184 210h51l-9 32c-13 9-22 9-35 0l-7-32Z" fill="#2a405d" stroke="#aac9e2" stroke-width="3" stroke-linejoin="round"/>
+    <circle cx="209" cy="226" r="6" fill="#f8d37e"/>
+    <!-- Skull -->
+    <path d="M136 103c0-54 32-88 77-91 51-4 88 30 92 85 3 37-9 59-27 77l-9 39c-1 10-9 17-19 17h-60c-10 0-17-7-18-17l-8-33c-17-17-28-41-28-77Z" fill="url(#skull)" stroke="#fffdf4" stroke-width="5"/>
+    <path d="M153 83c8-34 28-51 58-54 28-3 50 8 64 30-22-12-37-15-58-13-24 2-42 14-64 37Z" fill="#fff" opacity=".68"/>
+    <ellipse cx="185" cy="124" rx="25" ry="34" fill="#171722"/>
+    <ellipse cx="258" cy="123" rx="24" ry="34" fill="#171722"/>
+    <ellipse cx="205" cy="125" rx="47" ry="31" fill="#47d7ff" opacity=".84" filter="url(#glow)"/>
+    <path d="M179 125c3-19 10-27 20-27 12 0 18 13 16 30-2 13-8 19-17 19-12 0-21-8-19-22Z" fill="url(#blueEye)"/>
+    <path d="M190 111c7-11 14-8 16 1l-7 8 9 7-9 18c-9-7-11-20-9-34Z" fill="#fff" opacity=".96"/>
+    <path d="M228 168c11-7 26-8 38-2" stroke="#8e8c8b" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+    <path d="M198 177c15-15 45-18 65-4 12 9 15 25 9 37-8 15-29 18-47 16-22-2-41-16-40-31 0-7 4-13 13-18Z" fill="#211f25" stroke="#57535a" stroke-width="3"/>
+    <path d="M201 190c17 6 43 5 61-2M207 202l2 15m16-14v15m17-18 2 14m15-19 2 9" stroke="#f0eee5" stroke-width="4" stroke-linecap="round"/>
+    <path d="M135 115c5 47 21 68 41 82" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".48"/>
+    <path d="M298 95c10 34 3 65-15 88" stroke="#aaa8a6" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+    <!-- Gloved hands -->
+    <path d="M77 234c-9-10-23-9-29 1-5 8 0 15 8 20-5 8-1 18 8 20 6 2 12-1 16-7 9 3 17-3 16-12 0-9-8-13-19-22ZM337 234c10-10 23-9 29 1 5 8 0 15-8 20 5 8 1 18-8 20-7 2-12-1-17-7-8 3-17-3-16-12 0-9 8-13 20-22Z" fill="#f7f3e7" stroke="#a9c7e2" stroke-width="4"/>
+  </g>
+  <!-- Soul-fire and small snow-like sparkles -->
+  <path d="M322 60c5-13 11-17 14-27 10 12 9 24 2 32-6 7-16 6-16-5Z" fill="#66ddff" opacity=".8"/>
+  <path d="m81 96 4 10 10 4-10 4-4 10-4-10-10-4 10-4 4-10Zm255 55 3 7 7 3-7 3-3 7-3-7-7-3 7-3 3-7Z" fill="#d7fcff" opacity=".75"/>
+</svg>
